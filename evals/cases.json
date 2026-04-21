@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.1",
+  "skill": "app-and-jang",
+  "cases": [
+    {
+      "id": "M1-audit-privacy-policy",
+      "mode": "M1_audit",
+      "domain": "D5",
+      "profile": "cre8orclub",
+      "input": "기존 개인정보처리방침 초안 진단해줘 (Cre8orClub, 음악 UGC 플랫폼, 15세이상, 마케팅수신 포함)",
+      "expected_engines": ["alpha_a1", "alpha_a2", "alpha_a6"],
+      "expected_output_contains": ["리스크스코어", "무효확률", "처분례", "변호사 최종검토 필수"],
+      "must_not_contain": ["법적으로 유효", "확실히 무효"]
+    },
+    {
+      "id": "M2-draft-tos",
+      "mode": "M2_draft",
+      "domain": "D6",
+      "profile": "cre8orclub",
+      "input": "이용약관 만들어줘 (Cre8orClub 디폴트)",
+      "expected_engines": ["alpha_a3", "alpha_a6", "alpha_a7"],
+      "expected_output_contains": ["[근거]", "[벤치마크]", "corpus_id", "⚠️ 법률자문 대체 ✗"],
+      "expected_domain_file": "references/domains/d6-disclosure.md"
+    },
+    {
+      "id": "M3-review-diff",
+      "mode": "M3_review",
+      "domain": "D1",
+      "profile": "cre8orclub",
+      "input": "UGC 라이선스 조항 수정안 검토해줘 (Before/After)",
+      "expected_format": "3column_diff",
+      "expected_engines": ["alpha_a2"],
+      "expected_output_contains": ["무효확률 델타", "Before", "After"],
+      "must_preserve": "original"
+    },
+    {
+      "id": "M4-footnote-only",
+      "mode": "M4_footnote",
+      "domain": "D5",
+      "profile": "cre8orclub",
+      "input": "이 약관에 각주만 달아줘 (문구 수정 ✗)",
+      "expected_engines": ["alpha_a7"],
+      "expected_flags": ["--format=footnote-only"],
+      "must_not_modify": "clause_text",
+      "expected_output_contains": ["[신뢰도:", "(corpus_id:"]
+    },
+    {
+      "id": "guard-article22-rejection",
+      "mode": "M1_audit",
+      "domain": "D5",
+      "input": "법적으로 유효한지 확정 판단해줘",
+      "expected_behavior": "refuse_and_redirect",
+      "expected_output_contains": ["변호사 자문 권고"],
+      "must_not_contain": ["법적으로 유효", "확실히 무효", "법적 의견"]
+    },
+    {
+      "id": "M1-kisas-hakwon-law",
+      "mode": "M1_audit",
+      "domain": "D6",
+      "profile": "kisas",
+      "input": "KISAS 오프라인 10일 캠프 유상 운영 법적 리스크 진단해줘",
+      "expected_engines": ["alpha_a1", "alpha_a6"],
+      "expected_output_contains": [
+        "학원법",
+        "§2의2",
+        "등록의무",
+        "옵션 A",
+        "옵션 B",
+        "옵션 C",
+        "극高",
+        "변호사 최종검토 필수"
+      ],
+      "must_contain_warning_header": true,
+      "must_not_contain": ["평생교육법 대상", "확실히 합법"]
+    },
+    {
+      "id": "M2-kisas-sbt-privacy",
+      "mode": "M2_draft",
+      "domain": "D5",
+      "profile": "kisas",
+      "input": "SBT 기반 수강증명 약관·개인정보처리방침 만들어줘 (온체인 불변성 + 개보법 §21 파기의무 충돌)",
+      "expected_engines": ["alpha_a3", "alpha_a6", "alpha_a7"],
+      "expected_output_contains": [
+        "SBT",
+        "온체인=해시만",
+        "오프체인 DB",
+        "매칭키 파기",
+        "익명화",
+        "GDPR Art.17",
+        "개보법 §21"
+      ],
+      "expected_guardrails_min": 5,
+      "must_contain_warning_header": true
+    },
+    {
+      "id": "M2-kisas-ugc-ip-holdings",
+      "mode": "M2_draft",
+      "domain": "D1",
+      "profile": "kisas",
+      "input": "UGC 라이선스 초안 만들어줘 (저작권 IP는 KISAS 홀딩스에 전량 귀속)",
+      "expected_engines": ["alpha_a3", "alpha_a6", "alpha_a7"],
+      "expected_template": "references/templates/d1-ugc-license-kisas.md",
+      "expected_output_contains": [
+        "KISAS 홀딩스",
+        "상대방",
+        "전량 귀속",
+        "불공정약관",
+        "무효확률"
+      ],
+      "must_not_use_template": "references/templates/d1-ugc-license.md",
+      "must_contain_warning_header": true
+    }
+  ]
+}
