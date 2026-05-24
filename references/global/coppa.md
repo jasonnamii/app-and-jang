@@ -1,17 +1,18 @@
-# COPPA (Children's Online Privacy Protection Act, US)
+# COPPA (Children's Online Privacy Protection Act, US) — v2.3 (2026-05-25 갱신)
 
 ## 트리거
-`--global=coppa` · 13세 미만 미국 유저 대상 · Directed-to-Children 서비스
+`--global=coppa` · 13세 미만 미국 유저 대상 · Directed-to-Children 서비스 · Mixed Audience
 
-## 최신 규제 동향 — 2026-04-22 전면 시행
-FTC가 2025-04-22 관보 게재한 **COPPA Rule Final Amendments** (16 CFR Part 312)가 **2026-04-22 full compliance** 기준으로 발효. 기존 스몰 비즈니스 유예 종료.
+## 최신 규제 동향 — 2026-04-22 전면 시행 (Compliance Deadline)
+FTC가 2025-04-22 관보 게재한 **COPPA Rule Final Amendments** (16 CFR Part 312, Federal Register 2025-05904)가 **2025-06-23 effective date** 이후 **2026-04-22 full compliance** 기준으로 발효. 신규 의무 대부분 2026-04-22까지 정합화 완료 필수.
 
-### 이번 개정 핵심 5건
+### 이번 개정 핵심 6건
 1. **Separate Opt-in for 3rd-party Disclosure** — 타깃광고·외부 공유에 별도 동의 필수 (수집 동의와 분리)
 2. **Data Retention Written Policy** — 보유기간·삭제 기준 문서화 및 공개 의무 (목적 초과 보관 ✗)
-3. **Security Program Mandatory** — 관리적·기술적·물리적 보호조치 프로그램 구축·유지·문서화
+3. **Security Program Mandatory** — 관리적·기술적·물리적 보호조치 프로그램 **서면** 구축·유지·문서화
 4. **Expanded PII Definition** — 생체인식 데이터(음성·영상·얼굴)·정부 발급 식별자 추가
-5. **VPC(Verifiable Parental Consent) 방법 확대** — Knowledge-based auth · Text-plus · Government ID matching 명시
+5. **VPC(Verifiable Parental Consent) 방법 확대** — Knowledge-based auth · **Text-message(text plus)** · Government ID matching 명시
+6. **Mixed Audience 정의 신설** — 별도 명확한 정의 — 13세 미만 + 13세 이상 모두 대상이면서 Primary가 아동이 아닌 경우 (연령확인 후 13+에만 일반 처리 가능)
 
 ## 핵심 의무 (상시)
 - **Notice** — 정책 최상단에 수집·이용·공유 항목 고지

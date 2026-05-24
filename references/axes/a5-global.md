@@ -1,8 +1,8 @@
-# A5. 글로벌 오버레이 지식축 (DEEP v1.1)
+# A5. 글로벌 오버레이 지식축 (DEEP v1.2)
 
-> 한국법 디폴트 True 위에 얹는 **글로벌 플래그 오버레이**. SKILL.md "글로벌 오버레이" 표 6플래그(gdpr·dmca·jasrac·pipl·coppa·ccpa)와 1:1 정렬. 플래그 `--global=xxx` 호출 시 로드. 디폴트 오프.
+> 한국법 디폴트 True 위에 얹는 **글로벌 플래그 오버레이**. SKILL.md "글로벌 오버레이" 표 8플래그(gdpr·dsa·dma·dmca·jasrac·pipl·coppa·ccpa·app-stores)와 1:1 정렬. 플래그 `--global=xxx` 호출 시 로드. 디폴트 오프.
 >
-> **팩트체크 완료** 2026-04-21 — 과징금액·시행일 핵심값 교차검증. **v1.1 정렬 2026-04-22** — SKILL.md 6플래그 정렬 + DMA·APPI 백로그 분리.
+> **팩트체크 완료** 2026-04-21 — 과징금액·시행일 핵심값 교차검증. **v1.1 정렬 2026-04-22** — SKILL.md 6플래그 정렬 + DMA·APPI 백로그 분리. **v1.2 갱신 2026-05-25 (v2.3)** — DSA·DMA·app-stores 활성화 + 2025 집행사례 (TikTok €530M·Meta €479M·X €120M·Apple €500M·Meta €200M) 반영.
 
 ---
 
@@ -16,14 +16,16 @@
 | `--global=dmca` | 미국 저작권 | 스포크 위임 | `→ references/global/dmca.md` |
 | `--global=jasrac` | 일본 음악 권리 | 스포크 위임 | `→ references/global/jasrac.md` |
 | `--global=pipl` | 중국 개인정보 | 스포크 위임 | `→ references/global/pipl.md` |
+| `--global=dsa,dma` | EU 플랫폼 규제 | **v1.2 신규** | `→ references/global/dsa-dma.md` |
+| `--global=app-stores` | Apple·Google 정책 | **v1.2 신규** | `→ references/global/app-stores.md` |
 
-**Cre8orClub 디폴트 권장:** gdpr·dmca·jasrac·pipl (음악·UGC·해외팬).
+**Cre8orClub 디폴트 권장:** gdpr·dmca·jasrac·pipl·app-stores (음악·UGC·해외팬·앱마켓).
 
 ---
 
 ## 백로그 (현재 비활성)
 
-- **DMA (EU 디지털시장법)** — 게이트키퍼 ✗ (Cre8orClub 매출·MAU 미달). 본문 G3 자료는 향후 게이트키퍼 도달 시 재활성. 현재 정책 영향 간접.
+- **DMA 직접 의무** — Cre8orClub 게이트키퍼 ✗ (매출·MAU 미달). 본문 G3는 간접영향 분석 유지. **v2.3에서 dsa-dma.md 스포크 활성화** — Apple·Meta 2025 비준수 결정 후속.
 - **APPI (일본 개보법)** — JASRAC와 별개. 일본 본격 진출(현지법인·일본 유저 대량) 시 별도 플래그 신설 검토. 본문 G5 자료 보존.
 
 ---
@@ -75,6 +77,10 @@ DMCA·JASRAC·PIPL 본문은 `references/global/` 스포크 직접 참조.
 | 3 | TikTok (아일랜드 DPC) | **3.45억 유로** | 미성년자 기본값 공개 설정 | 2023 |
 | 4 | Google (프랑스 CNIL) | **5천만 유로** | 동의 명확성·접근성 부족 | 2019 |
 | 5 | Uber (네덜란드 AP) | **2.9억 유로** | 기사 데이터 미국 이전 SCC 위반 | 2024-07-22 |
+| 6 | **TikTok (아일랜드 DPC)** | **5.3억 유로 (€530M)** | EEA 이용자 데이터 중국 서버 전송·아동 데이터 처리 | **2025-05** |
+| 7 | **Meta (스페인 마드리드 법원)** | **4.79억 유로 (€479M)** | 87개 언론사 행동광고 데이터 처리 적법근거 부재 | **2025-11** |
+
+**v2.3 추가** — 2025 총 GDPR 과징금 약 **€1.2B**. 시행(2018) 이후 누적 약 **€7.1B**. 빅테크가 역대 TOP10 중 9건 차지.
 
 ### Cre8orClub 적용점
 
@@ -126,8 +132,19 @@ DMCA·JASRAC·PIPL 본문은 `references/global/` 스포크 직접 참조.
 ### 핵심
 
 - 2024-03-07 전면 적용
-- 게이트키퍼 지정 7사(2024-04): Alphabet·Amazon·Apple·ByteDance·Meta·Microsoft·Booking
+- 게이트키퍼 지정 7사(2024-04) → 2026-02 기준 8사 + 신규 지정 후보. **Apple Ads·Apple Maps는 2026-02-05 미지정 결정**
 - 핵심 의무: 사이드로딩 허용·자사 우대 금지·상호운용성·광고 투명성
+
+### [v2.3 갱신] 2025 비준수 결정 (DMA 최초)
+- **Apple €500M** (2025-04-23) — App Store steering 위반 (외부 결제·앱 안내 제한)
+- **Meta €200M** (2025-04-23) — "Pay or Consent" 모델 (구독 vs 데이터 양자택일 강요)
+- **Google 예비결정** (2025-03-19) — Google Search VSS 자사우대 + Play의 외부 결제 안내 차단 (과징금 미부과 단계)
+
+### [v2.3 신규] DSA 최초 비준수 — X €120M
+- **2025-12-05 EU 집행위 결정** (DSA 시행 후 최초)
+- 위반 3건: ① 블루체크 기만적 표시 ② 광고 저장소 결함 (Art.39) ③ 연구자 데이터 접근 차단 (Art.40(12))
+- 진행 중 조사 14건 (AliExpress·Facebook·Instagram·Temu·TikTok·X)
+- DSA 처벌 = 전세계매출 최대 **6%** / DMA 처벌 = 전세계매출 최대 **10%** (반복 시 **20%**)
 
 ### 간접 영향
 
@@ -137,9 +154,12 @@ DMCA·JASRAC·PIPL 본문은 `references/global/` 스포크 직접 참조.
 
 ### Cre8orClub 적용점 (현재)
 
-- 직접 의무 없음
+- 직접 의무 없음 (게이트키퍼 미달)
+- **DSA Notice-and-Action 메커니즘** = UGC 플랫폼 일반 의무 → 신고·제거 SOP 표준 준수 권장
+- **다크패턴 금지** = 한국 전상법 §21-2와 동일 가드레일로 동시 충족
 - 2027~2028 수익화 전환 시 EU 배포 모델 재검토 변수
 - 광고 SDK 선정 시 DMA 준수 SDK 우선
+- 상세 = `→ references/global/dsa-dma.md`
 
 ---
 
@@ -210,7 +230,7 @@ DMCA·JASRAC·PIPL 본문은 `references/global/` 스포크 직접 참조.
 
 | 항목 | 한국 개보법 | GDPR | CCPA/CPRA | 일본 APPI |
 |---|---|---|---|---|
-| 과징금 상한 | **전체매출 3%** (10% 특례 2026-02-12 본회의 통과·공포 대기) | **전체매출 4% or €2천만** | 의도적 위반 1건당 **$7,500** | 없음 (형사처벌) |
+| 과징금 상한 | **전체매출 3%** (10% 특례 공포 2026-03-11·시행 2026-09-11) | **전체매출 4% or €2천만** | 의도적 위반 1건당 **$7,500** | 없음 (형사처벌) |
 | 동의 요건 | 분리·명시 | 명시적·자유로운 | Opt-out 원칙 | 사전 동의 원칙 |
 | 유출 통지 | "지체없이" | **72시간** | 거주자 통지 의무 | 중대유출 의무 |
 | 데이터이동권 | ✗ | Art. 20 O | ✗ | ✗ |
