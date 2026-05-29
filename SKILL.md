@@ -1,13 +1,7 @@
 ---
 name: app-and-jang
 description: |
-  앱 정책·법적 고지문서 v2.3 "Regulatory Alpha+". 7도메인×4축 + α 7엔진(처분례·판례룰·벤치마크·레이더·심사관·시나리오·각주). 진단·생성·검토·각주 4모드. 한국법 디폴트. 김앤장 10배 증폭기. 디폴트 프로파일=Cre8orClub, KISAS 프로파일 별도.
-  P1: 앱앤장, appandjang, 앱정책, 앱법무, 앱컴플라이언스, 이용약관, 개인정보처리방침, 위치정보약관, 청소년보호정책, 커뮤니티정책, 쿠키정책, OSS고지, UGC저작권, 퍼블리시티, OSP면책, 앱스토어정책, 크리에이터약관, 팬플랫폼, 처분례, 판례룰, 벤치마크, 규제레이더, 심사관휴리스틱, 분쟁시나리오, 각주엔진, 과징금기대값, 무효확률, 김앤장, KISAS, Cre8orClub, SBT, 학원법, IP귀속, 홀딩스.
-  P2: 만들어줘, 검토해줘, 진단해줘, 각주달아줘, draft, review, audit.
-  P3: app compliance, app legal, privacy policy, enforcement corpus, footnote engine.
-  P4: 런칭 전 법정의무문서 점검시, 약관 초안 작성시, 개보법 개정 반영시, 앱스토어 리젝 대응시, SBT·IP귀속·학원법 검토시.
-  P5: 마크다운 출력, 각주인라인, 리포트 산출, 체크리스트 형식.
-  NOT: B2B계약(→contract-reviewer), 정책기획(→policy-planning), BP(→bp-guide).
+  앱 정책·법적 고지문서 v2.3 "Regulatory Alpha+". 7도메인×4축 + α 7엔진(처분례·판례룰·벤치마크·레이더·심사관·시나리오·각주). 진단·생성·검토·각주 4모드. 한국법 디폴트. 김앤장 10배 증폭기. 디폴트 프로파일=Cre8orClub, KISAS 프로파일 별도. 트리거: 앱앤장, appandjang, 앱정책, 앱법무, 앱컴플라이언스, 이용약관, 개인정보처리방침, 위치정보약관, 청소년보호정책, 커뮤니티정책, 쿠키정책, OSS고지, UGC저작권, 퍼블리시티, OSP면책, 앱스토어정책, 크리에이터약관, 팬플랫폼, 처분례, 판례룰, 벤치마크, 규제레이더. NOT: B2B계약(→contract-reviewer), 정책기획(→policy-planning), BP(→bp-guide).
 ---
 
 # App & Jang (앱앤장) Engine v2.3 "Regulatory Alpha+"
